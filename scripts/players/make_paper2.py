@@ -12,6 +12,9 @@ script reads ``results/players/`` (and, for data counts,
 - ``fig-*.pdf``: vector figures drawn at the width main.tex includes them at,
   so their text is set at its true size.
 
+It also writes PNG copies of the figures the README shows to ``docs/figures/``,
+which is committed so that GitHub can display them.
+
 It runs at any stage of the study. A macro, table or figure whose source file
 does not exist yet is skipped and listed as pending at the end; the paper
 renders it as [pending]. The ranking stage (M5, M6, M8, M9) writes summary.json
@@ -50,6 +53,15 @@ PROCESSED = ROOT / "data" / "players" / "processed"
 PAPER = ROOT / "paper-unmeasured"
 GENERATED = PAPER / "generated"
 POOL = PAPER / "data" / "pool.csv"
+README_FIGURE_DIR = ROOT / "docs" / "figures"
+README_FIGURES = (
+    "fig-corrected-ranking",
+    "fig-unmeasured-share",
+    "fig-h3-parametric",
+    "fig-reliability",
+    "fig-recovery",
+    "fig-league-levels",
+)
 
 LINEWIDTH_IN = 6.27  # \linewidth of A4 with 1in margins (main.tex geometry)
 
@@ -3216,6 +3228,7 @@ def _missing(error: FileNotFoundError) -> str:
 
 def main() -> None:
     GENERATED.mkdir(parents=True, exist_ok=True)
+    README_FIGURE_DIR.mkdir(parents=True, exist_ok=True)
     declared = declared_macros()
     macros: dict[str, str] = {}
     skipped: list[str] = []
@@ -3247,6 +3260,8 @@ def main() -> None:
             elif name in FIGURES and width is not None:
                 fig = FIGURES[name](width * LINEWIDTH_IN)
                 fig.savefig(GENERATED / f"{name}.pdf", format="pdf")
+                if name in README_FIGURES:
+                    fig.savefig(README_FIGURE_DIR / f"{name}.png", format="png", dpi=200)
                 plt.close(fig)
             else:
                 pending[name] = "no renderer for this slot"
