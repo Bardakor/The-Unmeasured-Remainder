@@ -17,17 +17,15 @@ A clear and concise description of what you want to happen.
 A clear and concise description of any alternative solutions or features you've considered.
 
 **Which area would this affect?**
-- [ ] `src/footy/core/` (pricing mathematics)
-- [ ] `src/footy/market/` (overround, de-margining, Kelly)
-- [ ] `src/footy/eval/` (scoring rules)
-- [ ] `src/footy/study/` (walk-forward, coverage, evaluation)
-- [ ] `tests/` (fixtures, properties)
-- [ ] `docs/` (model spec, study design)
+- [ ] `src/footy/players/` (pure estimators)
+- [ ] `scripts/players/` (data acquisition, runners, paper generator)
+- [ ] `paper-unmeasured/` (paper, pre-registration, curated data)
+- [ ] `tests/` (synthetic leagues, fixtures)
+- [ ] `docs/` (study design, literature, licences)
 
 **Additional context**
 Add any other context about the feature request here.
 
 **Implementation considerations**
-- Does this require changes to `docs/model.md`?
-- Are new Layer-1 fixtures or Layer-2 properties needed?
-- Does this affect the pre-registered study protocol?
+- Does it change an estimator, and so need a synthetic-league test with a planted truth?
+- Does it change a registered analysis, and so need a dated amendment to the pre-registration?

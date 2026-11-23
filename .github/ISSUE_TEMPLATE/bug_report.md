@@ -30,4 +30,4 @@ Paste relevant pytest / mypy / ruff output here
 ```
 
 **Additional context**
-Add any other context about the problem here (e.g. which module, which Layer-1 fixture).
+Add any other context about the problem here (e.g. which module, which synthetic-league test).
