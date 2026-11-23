@@ -55,6 +55,7 @@ Processing assumptions:
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import shutil
@@ -65,7 +66,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from footy.data.football_data import sha256_file
 from footy.players import elo, stints
 from footy.players.paths import PROCESSED, RAW
 from footy.players.window import WINDOW_END, WINDOW_START, season_label
@@ -434,7 +434,8 @@ def download(root: Path = RAW_DIR) -> dict[str, str]:
             part.replace(dest)
             entry["retrieved_at"] = datetime.now(UTC).isoformat(timespec="seconds")
             status[name] = "downloaded"
-        digest = sha256_file(dest)
+        with dest.open("rb") as fh:
+            digest = hashlib.file_digest(fh, "sha256").hexdigest()
         if "sha256" in entry and entry["sha256"] != digest:
             raise ValueError(f"{dest} no longer matches its manifest SHA-256")
         entry.update(path=str(dest.relative_to(root)), sha256=digest, bytes=dest.stat().st_size)

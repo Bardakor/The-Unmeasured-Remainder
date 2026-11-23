@@ -8,18 +8,10 @@ __pycache__/
 .hypothesis/
 *.egg-info/
 
-# Study artefacts: regenerable, never committed.
-# Leading slash anchors these to the repository root. Unanchored, `data/` also
-# matched `src/footy/data/` and silently kept the entire ingest package out of
-# version control — invisible, because `git status` stays clean for ignored paths.
+# Study artefacts: regenerable, never committed. Leading slash anchors these to
+# the repository root.
 /data/
 /results/
-/paper/figures/*.pdf
-/paper/figures/*.png
-
-# LaTeX build products and the tables written out of results/.
-/paper/generated/
-/paper/build/
 
 # Local Claude Code worktrees are not part of the study.
 .claude/
@@ -27,6 +19,6 @@ __pycache__/
 # OS
 .DS_Store
 
-# Paper 2: generated macros, figures and LaTeX build products.
+# Generated macros, tables, figures and LaTeX build products.
 /paper-unmeasured/generated/
 /paper-unmeasured/build/

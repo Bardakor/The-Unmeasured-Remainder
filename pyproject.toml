@@ -1,15 +1,15 @@
 [project]
 name = "footy"
 version = "0.1.0"
-description = "Reproducible study of whether a football-forecasting edge over bookmakers survives the choice of de-margining transform"
+description = "Reproducible study of how much of \"who was the best footballer of 2020-2026\" public match data can decide"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.12"
 keywords = [
     "football",
-    "Dixon-Coles",
-    "bookmaker-margin",
-    "forecast-evaluation",
+    "player-ratings",
+    "plus-minus",
+    "multiverse-analysis",
     "research-reproducibility",
 ]
 classifiers = [
@@ -22,9 +22,9 @@ classifiers = [
 dependencies = ["numpy>=2.0", "scipy>=1.14", "pandas>=2.2", "matplotlib>=3.9"]
 
 [project.urls]
-Homepage = "https://github.com/Bardakor/betting-app-yami"
-Repository = "https://github.com/Bardakor/betting-app-yami"
-Documentation = "https://github.com/Bardakor/betting-app-yami/blob/main/docs/model.md"
+Homepage = "https://github.com/Bardakor/The-Unmeasured-Remainder"
+Repository = "https://github.com/Bardakor/The-Unmeasured-Remainder"
+Documentation = "https://github.com/Bardakor/The-Unmeasured-Remainder/blob/main/paper-unmeasured/preregistration.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "hypothesis>=6.100", "ruff>=0.6", "mypy>=1.11", "pandas-stubs>=2.2"]
@@ -49,14 +49,6 @@ files = ["src", "tests"]
 
 [[tool.mypy.overrides]]
 module = "scipy.*"
-ignore_missing_imports = true
-
-# scripts/*.py live outside src/, so they are not themselves under strict
-# mypy (matching study.py) --- but tests import them off sys.path, and mypy
-# needs to be told those imports are expected to be unresolvable rather
-# than real errors.
-[[tool.mypy.overrides]]
-module = ["make_figures", "make_tables"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

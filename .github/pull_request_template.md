@@ -12,17 +12,17 @@ Fixes # (issue number)
 - [ ] Code style/formatting
 
 ## Areas affected
-- [ ] `src/footy/core/` (pure pricing mathematics)
-- [ ] `src/footy/market/` (overround, de-margining, Kelly)
-- [ ] `src/footy/eval/` (scoring rules, Murphy decomposition)
-- [ ] `tests/` (fixtures, properties, purity)
-- [ ] `docs/` (model specification, study design)
+- [ ] `src/footy/players/` (pure estimators)
+- [ ] `scripts/players/` (data acquisition, runners, paper generator)
+- [ ] `paper-unmeasured/` (paper, pre-registration, curated data)
+- [ ] `tests/` (synthetic leagues, fixtures)
+- [ ] `docs/` (study design, literature, licences)
 
 ## How has this been tested?
 - [ ] `make verify` passes locally
 - [ ] New or updated unit tests added
-- [ ] Layer-1 fixture values updated (if model spec changed)
-- [ ] Layer-2 Hypothesis properties updated (if invariants changed)
+- [ ] Synthetic-league tests added or updated (if an estimator changed)
+- [ ] Pre-registration amended, with a date (if a method changed)
 
 ## Test configuration
 - Python version:

@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a defect in the pricing core, tests, or documentation
+about: Report a defect in the estimators, runners, tests, or documentation
 title: '[BUG] '
 labels: 'bug'
 assignees: ''

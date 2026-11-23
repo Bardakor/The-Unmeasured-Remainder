@@ -1,7 +1,9 @@
 # The Unmeasured Remainder — study design
 
-Date: 2026-11-14. Paper 2 of this repository. Paper 1 (`paper/`, the de-margining
-artifact) is finished and is not touched by this work.
+Date: 2026-11-14. Written when this study was the second paper of the repository of
+the first one (The De-margining Artifact, github.com/Bardakor/The-De-margining-Artifact);
+"paper 1" below is that study. The study moved to its own repository on 2026-11-23,
+with its full commit history.
 
 ## 1. Intent
 
