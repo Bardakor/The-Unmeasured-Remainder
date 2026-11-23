@@ -67,7 +67,7 @@
 %     fig-league-levels          9.2  post hoc: league means with 90% intervals, Premier League at zero
 %     fig-corrected-ranking      9.4  post hoc, MAIN RANKING: median rank with 90% rank interval, first twenty places of the corrected mixture
 %   Other file (not generated)
-%     logos/statsbomb.pdf        App. B  StatsBomb logo from https://statsbomb.com/media-pack/
+%     logos/statsbomb.png        App. B  StatsBomb logo from github.com/statsbomb/open-data (img/)
 \documentclass[11pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
@@ -88,6 +88,7 @@
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={The Unmeasured Remainder}, pdfauthor={Liam Abourousse}}
 \usepackage{xurl}
 % Stops a table or figure from drifting past the section that refers to it.
 \usepackage[section]{placeins}
@@ -144,8 +145,8 @@
   \begin{center}\textcolor{red}{[figure #1 pending: run \texttt{make players-results},
   then \texttt{make paper2}]}\end{center}}
 \newcommand{\pendinglogo}{%
-  \textcolor{red}{[StatsBomb logo pending: place the Media Pack file at
-  \texttt{paper-unmeasured/logos/statsbomb.pdf}]}}
+  \textcolor{red}{[StatsBomb logo pending: place the logo file at
+  \texttt{paper-unmeasured/logos/statsbomb.png}]}}
 \newcommand{\pendingprose}[1]{\textcolor{red}{[#1 pending results]}}
 
 \input{macros-defaults.tex}
@@ -4066,6 +4067,7 @@ about the players.
 \section{Reproducibility}
 \label{app:repro}
 
+The code is at \url{https://github.com/Bardakor/The-Unmeasured-Remainder}.
 The whole paper is rebuilt from public sources by three make targets.
 
 \begin{itemize}
@@ -4126,7 +4128,7 @@ the StatsBomb Public Data User Agreement for non-commercial research.
 analysis formed from StatsBomb data to carry the StatsBomb logo:
 
 \begin{center}
-  \IfFileExists{logos/statsbomb.pdf}{\includegraphics[height=1.2cm]{logos/statsbomb.pdf}}{\pendinglogo}
+  \IfFileExists{logos/statsbomb.png}{\includegraphics[height=1.2cm]{logos/statsbomb.png}}{\pendinglogo}
 \end{center}
 
 \noindent StatsBomb data enter the stints and appearances of the 2022 World Cup

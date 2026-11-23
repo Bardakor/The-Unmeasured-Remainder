@@ -79,8 +79,10 @@ https://stat.ethz.ch/pipermail/r-package-devel/2018q1/002405.html
 - **Print the StatsBomb logo** with any figure or table built from SB data,
   or once in the data section, which clause 1.4 requires for "any
   publication". **State "Data source: StatsBomb"** and cite
-  `statsbombopendata`. The logo file must come from the Media Pack, and the
-  logo is not committed to the repo until someone fetches it from there.
+  `statsbombopendata`. The logo is `paper-unmeasured/logos/statsbomb.png`,
+  the file StatsBomb ships in its own open-data repository
+  (`img/SB - Icon Lockup - Colour positive.png`, fetched 2026-11-23, SHA-256
+  `8ba54807…2872a7`). The paper's licence appendix and the README print it.
 - **Never commit or publish raw SB events** or per-event derived files that
   reproduce them. Aggregates (player-season xT, xG correlations) are
   "analysis" and may be shared.
