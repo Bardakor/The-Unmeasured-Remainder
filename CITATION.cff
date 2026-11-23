@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this study, please cite it as below."
+title: "The Unmeasured Remainder: how much of \"who was the best footballer of 2020-2026\" can public statistics decide?"
+type: software
+authors:
+  - family-names: Abourousse
+    given-names: Liam
+repository-code: "https://github.com/Bardakor/The-Unmeasured-Remainder"
+license: MIT
+date-released: "2026-11-23"
+keywords:
+  - football
+  - player ratings
+  - plus-minus
+  - multiverse analysis
+  - pre-registration
